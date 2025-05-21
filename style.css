@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#calculator {
+    width: 320px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+}
+
+#display {
+    width: calc(100% - 10px); /* Account for padding */
+    padding: 10px 5px;
+    font-size: 2em;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+}
+
+.buttons button:hover {
+    background-color: #efefef;
+}
+
+.buttons button:active {
+    background-color: #e0e0e0;
+}
+
+/* Specific styles for operator buttons */
+.buttons button:nth-child(4n), /* Every 4th button in a row (operators in the current layout) */
+.buttons button:last-child { /* The '+' button in the last row */
+    background-color: #f0ad4e; /* Orange color for operators */
+    color: white;
+}
+
+.buttons button:nth-child(4n):hover,
+.buttons button:last-child:hover {
+    background-color: #ec9a29;
+}
+
+.buttons button:nth-child(4n):active,
+.buttons button:last-child:active {
+    background-color: #d88c1a;
+}
+
+/* Style for the Clear button (second to last) */
+.buttons button:nth-last-child(3) {
+    background-color: #d9534f; /* Red color for Clear */
+    color: white;
+}
+
+.buttons button:nth-last-child(3):hover {
+    background-color: #c9302c;
+}
+
+.buttons button:nth-last-child(3):active {
+    background-color: #b82b27;
+}
+
+/* Style for the Equals button (third to last) */
+.buttons button:nth-last-child(2) {
+    background-color: #5cb85c; /* Green color for Equals */
+    color: white;
+    /* Optional: Make equals button span more columns if desired */
+    /* grid-column: span 2; */
+}
+
+.buttons button:nth-last-child(2):hover {
+    background-color: #4cae4c;
+}
+
+.buttons button:nth-last-child(2):active {
+    background-color: #449d44;
+}
